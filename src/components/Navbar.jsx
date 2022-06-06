@@ -1,11 +1,9 @@
 import React from 'react'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import{faCartShopping} from '@fortawesome/free-solid-svg-icons';
 import CartWidget from './CartWidget';
 
 function Navbar() {
     return (
-        <nav className="navbar navbar-expand-lg bg-light">
+        <nav className="navbar navbar-expand-lg bg-dark">
             <div className="container-fluid">
                 <a className="navbar-brand" href="#">Navbar</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,12 +24,12 @@ function Navbar() {
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a className="dropdown-item" href="#">Products</a></li>
                                 <li><a className="dropdown-item" href="#">Promotions</a></li>
+                                
                                 <li><a className="dropdown-item" href="#">About us</a></li>
+                                <li><a className="dropdown-item" href="#">Contact us</a></li>
                             </ul>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link">Contac us</a>
-                        </li>
+                        
                     </ul>
                     <div>
                     <button className="btn btn-outline-success"><CartWidget numero={4}/></button>
