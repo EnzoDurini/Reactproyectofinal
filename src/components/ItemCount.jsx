@@ -17,14 +17,15 @@ const ItemCount = ({initial,max,onAdd}) => {
     }
 
   return (
-    <div>
+    <div class="align-content-center border-1 w-50 top-50 text-center">
         <h2>{count}</h2>
-        <button onClick={sumar}>+</button>
-        <button onClick={restar}>-</button>
+        <button class="btn-group btn-dark" onClick={sumar}>+</button>
+        <button class="btn-group btn-dark" onClick={() => {onAdd(count); reset()}}>Agregar al carrito</button>
+        <button class="btn-group btn-dark btn-outline-danger" onClick={restar}>-</button>
         <br />
         <button onClick={reset}>Reset</button>
-        <button onClick={() => {onAdd(count); reset()}}>Agregar al carrito</button>
-    </div>
+        </div>
+    
   )
 }
 

@@ -14,7 +14,7 @@ function App() {
   return (
   <>
     <Navbar/>
-    <ItemListContainer gracias={'Hola gracias por pasarte'}/>;
+    <ItemListContainer/>;
     <ItemCount initial={1} max={10} onAdd={onAdd} />;
   </>
     
