@@ -27,13 +27,12 @@ function ItemListContainer() {
       .then((result) => {
         setPersonaje(result)
       })
+      .catch(error => {console.error("Error",error);})
       .finally(()=>{
         setLoading(false);
       })
 
   }, [])
-
-
 
   return (
      <div>
