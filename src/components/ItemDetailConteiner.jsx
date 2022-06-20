@@ -1,31 +1,41 @@
-import React, { useEffect, useState } from 'react'
-import ItemDetail from './ItemDetail'
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import ItemDetail from "./ItemDetail";
 
 function ItemDetailConteiner() {
-    const [loading, setLoading] = useState([true])
-    const [personajes, setPersonaje] = useState([])
+  const { productId } = useParams();
+  const [loading, setLoading] = useState([true]);
+  const [personaje, setPersonaje] = useState({});
 
-    useEffect(() => {
-    const personajes = new Promise((res) => {
-        setTimeout(() => {
-        res([{id: 1, title: 'Luffy', description: 'Rol: Captain Fruit: Akuma no Mi', price: 15000, img: '/assets/luffy.jfif'}])
-        }, 2000)
-    })
-    personajes
-        .then((result) => {
-        setPersonaje(result)
-        })
-        .catch(error => {console.error("Error",error);})
-        .finally(()=>{
+  useEffect(() => {
+    const perdb = new Promise((res) => {
+          res(
+            fetch("/data.json")
+              .then(function(response) {
+                return response.json()
+            }));
+    });
+    perdb
+      .then((result) => {
+        setPersonaje(result.find(e => e.id == productId))
+      })
+      .catch((error) => {
+        console.error("Error", error);
+      })
+      .finally(() => {
         setLoading(false);
-        })
-    }, [])
+      });
+  }, [productId]);
 
-    return (
-        <div>
-            {loading? <h2 className='center'>Loading...</h2> : personajes?.map(personaje => <ItemDetail id={personaje.id} nombre={personaje.title} descripcion={personaje.description} img={personaje.img} precio={personaje.price}/>)}
-        </div>
-    )}
+  return (
+    <div>
+      {loading ? (
+        <h2 className="center">Loading...</h2>
+      ) : (
+        <ItemDetail personaje={personaje} />
+      )}
+    </div>
+  );
+}
 
-
-export default ItemDetailConteiner
+export default ItemDetailConteiner;

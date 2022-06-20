@@ -1,17 +1,18 @@
 import React from 'react'
 
-const ItemDetail = (personaje) => {
-    const{nombre,descripcion,precio,img} = personaje
+const ItemDetail = ({personaje}) => {
+  const {img,title,description,category,price} = personaje 
+  console.log(personaje.img);
+
   return (
-  <div style={{display:'flex', flexWrap:'wrap'}}>
-  <div class="card center" style={{width: "18rem", margin: 20}}>
-  <img src={img} class="card-img-top" alt="..."/>
-  <div class="card-body">
-    <h5 class="card-title">{nombre}</h5>
-    <p class="card-text">{descripcion}</p>
-    <h4 href="#" class="btn btn-primary">${precio}</h4>
+  <div className="card center" style={{width: "18rem", margin: 20}}>
+  <img src={img} className="card-img-top" alt="..."/>
+  <div className="card-body">
+    <h5 className="card-title text-black">{title}</h5>
+    <p className="card-text text-black">{description}</p>
+    <p className="card-text text-black">{category}</p>
+    <h3 className="card-body text-black">${price}</h3>
   </div>
-</div>
 </div>
     
     )

@@ -3,8 +3,8 @@ import Item from './Item'
 import "./ItemList.css"
 const ItemList = ({personajes}) => {
   return (
-    <div>
-        {personajes?.map(personaje => <Item id={personaje.id} nombre={personaje.title} descripcion={personaje.description} img={personaje.img} precio={personaje.price}/>)}
+    <div className='gridAuto'>
+        {personajes?.map(personaje => <Item key={personaje.id} id={personaje.id} nombre={personaje.title} img={personaje.img} precio={personaje.price}/>)}
     </div>
   )
 }
