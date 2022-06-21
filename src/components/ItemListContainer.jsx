@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import ItemList from './ItemList'
 
 function ItemListContainer() {
   const [loading, setLoading] = useState([true])
   const [personajes, setPersonaje] = useState([])
-
+  const { categoriaId } = useParams();
   
   useEffect(() => {
     const personajes = new Promise((res) => {
@@ -17,13 +18,22 @@ function ItemListContainer() {
     })
     personajes
       .then((result) => {
-        setPersonaje(result)})
+        if(categoriaId === undefined){
+          setPersonaje(result)
+        } else if (categoriaId === "sinFruta"){
+          setPersonaje(result.filter(e => e.category === false))
+        } else if (categoriaId === "conFruta"){
+          setPersonaje (result.filter(e => e.category === true))}
+        else{alert("No exite esta categoria")}
+        
+          })
+        
       .catch(error => {console.error("Error",error)})
       .finally(()=>{
         setLoading(false);
       })
 
-  }, [])
+  }, [categoriaId])
 
   return (
       <div>

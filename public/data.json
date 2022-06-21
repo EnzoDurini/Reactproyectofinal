@@ -3,7 +3,8 @@
     "id": 1,
     "title": "Luffy",
     "description": "Rol: Captain",
-    "category": "Fruit: Akuma no Mi",
+    "category": true,
+    "fruit": "Akuma no Mi",
     "price": 15000,
     "img": "/assets/luffy.jfif"
   },
@@ -11,7 +12,8 @@
     "id": 2,
     "title": "Zoro",
     "description": "Rol: Vice",
-    "category": "Fruit: none",
+    "category": false,
+    "fruit": "no",
     "price": 3200,
     "img": "/assets/zoro.jfif"
   },
@@ -19,7 +21,8 @@
     "id": 3,
     "title": "Sanji",
     "description": "Rol: Cooker",
-    "category": "Fruit: none",
+    "category": false,
+    "fruit": "no",
     "price": 3300,
     "img": "/assets/sanji.jfif"
   },
@@ -27,7 +30,8 @@
     "id": 4,
     "title": "Nami",
     "description": "Rol: Navigator",
-    "category": "Fruit: none",
+    "category": false,
+    "fruit": "no",
     "price": 660,
     "img": "/assets/nami.jfif"
   },
@@ -35,7 +39,8 @@
     "id": 5,
     "title": "Robbin",
     "description": "Rol: Archaeologist",
-    "category": "Fruit: Hana Hana no Mi",
+    "category": true,
+    "fruit": "Hana Hana no Mi",
     "price": 1300,
     "img": "/assets/robbin.jfif"
   },
@@ -43,7 +48,8 @@
     "id": 6,
     "title": "Usopp",
     "description": "Rol: Sniper",
-    "category": "Fruit: none",
+    "category": false,
+    "fruit": "no",
     "price": 2000,
     "img": "/assets/usopp.jfif"
   },
@@ -51,7 +57,8 @@
     "id": 7,
     "title": "Franky",
     "description": "Rol: Shipwright",
-    "category": "Fruit: none",
+    "category": false,
+    "fruit": "no",
     "price": 940,
     "img": "/assets/franky.jfif"
   },
@@ -59,7 +66,8 @@
     "id": 8,
     "title": "Brook",
     "description": "Rol: Musician",
-    "category": "Fruit: Yomi Yomi no mi",
+    "category": true,
+    "fruit": "Yomi Yomi no mi",
     "price": 830,
     "img": "/assets/brook.jfif"
   },
@@ -67,7 +75,8 @@
     "id": 9,
     "title": "Chopper",
     "description": "Rol: Doctor",
-    "category": "Fruit: Hito Hito no Mi",
+    "category": true,
+    "fruit": "Hito Hito no Mi",
     "price": 1,
     "img": "/assets/chopper.jfif"
   }
