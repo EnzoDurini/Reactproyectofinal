@@ -1,32 +1,29 @@
-import React, { useState } from 'react'
+import { useState } from "react"
 
-const ItemCount = ({initial,max,onAdd}) => {
+const ItemCount = ({stock,onAdd}) => {
 
-    const[count,setCount] = useState(initial)
+const [count, setCount] = useState(1)
 
     const sumar = () => {
-        count < max ? setCount(count+1) : alert ('No puedes agregar mas productos')
+        count < stock ? setCount(count+1) : alert ('No puedes agregar mas productos')
+        console.log(count)
     }
-    const reset = () => {
-        setCount(initial)
-    }
-    
     function restar() {
-        count > initial ? setCount(count - 1) : alert('No puedes quitar mas productos')
-            ;
+        count > 1 ? setCount(count - 1) : alert('No puedes quitar mas productos')
+        console.log(count)
     }
-
-  return (
-    <div className="align-content-center border-1 w-50 top-50 text-center">
-        <h2>{count}</h2>
+    const agregar = () => {onAdd(count);} 
+return (
+    <div className="d-flex col-xl-6 justify-content-evenly mb-3">
         <button className="btn-group btn-dark btn-outline-danger" onClick={restar}>-</button>
-        <button className="btn-group btn-dark" onClick={() => {onAdd(count); reset()}}>Agregar al carrito</button>
+        <div>
+        <h2>{count}</h2>
+        </div>
         <button className="btn-group btn-dark" onClick={sumar}>+</button>
-        <br />
-        <button onClick={reset}>Reset</button>
+        <button className="btn-group btn-dark" onClick={agregar}>Agregar al carrito</button>  
         </div>
     
-  )
+)
 }
 
 export default ItemCount;

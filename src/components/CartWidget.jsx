@@ -1,12 +1,16 @@
-import React from 'react';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import{faCartShopping} from '@fortawesome/free-solid-svg-icons';
+import {useCartContext} from './CartContext';
 
-function CartWidget({numero}) {
+function CartWidget() {
+/* const {getItemQty} = useCartContext() */
+
+
   return (
       <>
         <FontAwesomeIcon icon={faCartShopping}/>
-        {numero}  
+        {/* {getItemQty()}   */}
       </>
     
   )
