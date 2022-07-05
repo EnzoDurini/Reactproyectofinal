@@ -6,22 +6,22 @@ export function useCartContext() {
     return useContext(CartContext);
 }
 export const CartContextProvider = ({children}) => {
-    const [cart, setCart] = useState();
+    const [cart, setCart] = useState([]);
     
 
     const isInCart = (id) => {
-        return cart.some((x) => x.id ==  id);
+        return cart.some((x) => x.id ===  id);
     };
 
     const addItem = (newItem) => {
         if (isInCart(newItem.id)) {
-            const findProduct = cart.find((x) => x.id == newItem.id);
+            const findProduct = cart.find((x) => x.id === newItem.id);
             const productIndex = cart.indexOF(findProduct);
             const auxArray = [...cart];
             auxArray[productIndex].qty += newItem.qty;
             setCart(auxArray);
         } else {
-            setCart([...cart], newItem);
+            setCart([...cart, newItem]);
         }
     };
 
@@ -30,7 +30,7 @@ export const CartContextProvider = ({children}) => {
     };
 
     const deleteItem = (id) => {
-        return setCart(cart.filter((x) => x.id != id));
+        return setCart(cart.filter((x) => x.id !== id));
     };
 
     const getItemQty = () => {

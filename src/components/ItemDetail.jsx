@@ -1,12 +1,10 @@
-import {useState} from 'react'
 import ItemCount from './ItemCount';
 import {useCartContext} from './CartContext'
-import { Link } from 'react-router-dom';
+
 
 
 const ItemDetail = ({personaje}) => {
-  const {id,img,title,description,fruit,price,stock} = personaje 
-  console.log(personaje.img);
+  const {id,img,title,description,fruit,price,stock} = personaje
 
   const {isInCart ,addItem} = useCartContext()
 
@@ -18,7 +16,7 @@ const ItemDetail = ({personaje}) => {
 
   }
   
-  const [show, setShow] = useState(false)
+
 
   return (
   <div className="card center" style={{width: "18rem", margin: 20}}>
@@ -30,11 +28,7 @@ const ItemDetail = ({personaje}) => {
     <h3 className="card-body text-black">${price}</h3>
     <h4 className= "card-body"> Stock: {stock} </h4>
     <br />
-    {show? <div>
-      <Link to="/"><button>Continuar compra</button></Link>
-      <Link to="/cart"><button>Ir al carrito</button></Link>
-    </div>
-    : <ItemCount stock={stock} onAdd={onAdd} />}
+    <ItemCount stock={stock} onAdd={onAdd} />
   </div>
 </div>
     

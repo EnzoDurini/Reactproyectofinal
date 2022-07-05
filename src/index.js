@@ -3,8 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {initializeApp} from 'firebase/app';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+
+initializeApp({
+  apiKey: "AIzaSyA4Jrq0iszy95Mf0HfV2vSN8-giwyW0vAM",
+  authDomain: "proyectocoder-c74a5.firebaseapp.com",
+  projectId: "proyectocoder-c74a5",
+  storageBucket: "proyectocoder-c74a5.appspot.com",
+  messagingSenderId: "477268030733",
+  appId: "1:477268030733:web:332be8ef9d373dae7c6c44"
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
