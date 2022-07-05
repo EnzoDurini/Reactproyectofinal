@@ -7,7 +7,7 @@ const [cliente, setCliente] = useState('')
 const [email, setEmail] = useState('')
 const [cel, setCel] = useState('')
 const [compra, setCompra] = useState(false)
-const {cart,getItemPrice} = useCartContext()
+const {cart,getItemPrice,emptyCart} = useCartContext()
 const db= getFirestore()
 const orderCollection = collection(db,'orders')
 
@@ -20,6 +20,7 @@ function handleClick(){
     }
     //validar
     addDoc(orderCollection, order).then(({id})=>{setCompra(id)})
+    emptyCart()
 
 }
 

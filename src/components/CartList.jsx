@@ -6,7 +6,7 @@ import {useCartContext} from './CartContext';
 const CartList = () => {
   
 
-    const {deleteItem, cart,getItemQty} = useCartContext()
+    const {deleteItem, cart} = useCartContext()
   return <div>
       {cart?.map(personaje => 
                         <div key={personaje.id} className='border border-secondary py-3 d-flex align-items-center'>
