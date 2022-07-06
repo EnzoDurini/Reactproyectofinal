@@ -12,7 +12,7 @@ function Navbar() {
                         <Categories/>
                     </ul>
                     <div>
-                    <Link to="/cart" className="btn btn-outline-success"><CartWidget/></Link>
+                    <Link to="/cart" className="btn"><CartWidget/></Link>
                     </div>
             </div>
         </nav>
