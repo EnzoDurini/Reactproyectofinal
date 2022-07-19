@@ -11,7 +11,6 @@ const ItemDetail = ({personaje}) => {
   
 
   const onAdd = (count) => {
-    /* alert (`sumaste ${count} productos`) */
     isInCart(id)
     addItem({...personaje,qty:count})
     
@@ -20,13 +19,13 @@ const ItemDetail = ({personaje}) => {
 
 
   return (
-  <div className="card center" style={{width: "18rem", margin: 20}}>
-  <img src={img} className="card-img-top" alt="..."/>
+<div className="card center">
+  <img src={img} className="card-img-top img-fluid" alt="..."/>
   <div className="card-body">
     <h3 className="card-title text-black  d-flex justify-content-center">{title}</h3>
     <p className="card-text text-black d-flex justify-content-center">{description}</p>
-    {category? <p></p>
-    : <p className="card-text text-black d-flex justify-content-center">{fruit}</p>
+    { category === "sinfruta"? <p></p>
+    : <p className="card-text text-black d-flex justify-content-center">Poder : {fruit}</p>
     }
     
     <h3 className="text-black d-flex justify-content-center">${price}</h3>
@@ -34,7 +33,7 @@ const ItemDetail = ({personaje}) => {
     <br />
     <ItemCount stock={stock} onAdd={onAdd} />
   </div>
-</div>
+</div>  
     
     )
 }

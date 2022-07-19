@@ -2,7 +2,6 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ItemListContainer from './components/ItemListContainer';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
 import ItemDetailConteiner from './components/ItemDetailConteiner';
 import Error from './components/Error';
 import Cart from './components/Cart';
@@ -14,7 +13,7 @@ function App() {
 
 
   return (
-  <>
+  <div>
   <BrowserRouter>
   <CartContextProvider>
   <Navbar/>
@@ -29,11 +28,10 @@ function App() {
     <Route path="*" element = {<Error/>}/>
     
   </Routes>
-  <Footer/>
   </CartContextProvider>
   </BrowserRouter>
   
-  </>
+  </div>
     
   )
 }
