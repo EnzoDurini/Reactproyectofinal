@@ -27,7 +27,7 @@ function handleClick(){
 return (
     
         <div>
-            {compra? (<h2> Gracias por su compra vuelvas prontos</h2>) : (
+            {compra? (<h2>Nos estaremos comunicando por correo con usted-Gracias por la compra de su poster,vuelvas prontos</h2>) : (
         <div> <h1> Ultimo paso para finalizar su compra </h1>
      <h3>Datos personales</h3>
      <input onChange={(e)=> setCliente(e.target.value)} placeholder= "Ingrese su nombre" />

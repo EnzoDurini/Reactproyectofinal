@@ -27,7 +27,7 @@ function ItemDetailConteiner() {
   }, [productId]);
 
   return (
-    <div className="d-flex justify-content-center ">
+    <div className="d-flex justify-content-center align-items-center ">
       {loading ? (
           <div className="d-flex"><img src={carga} frameBorder="0" height="500px" width="500px"/></div>
         

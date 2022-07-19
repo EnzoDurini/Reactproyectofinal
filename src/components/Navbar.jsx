@@ -7,7 +7,7 @@ function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg bg-dark d-flex justify-content-center">
             <div className="container-fluid">
-                <Link className="navbar-brand" to="/home">Mugiwara´s shop</Link>
+                <Link className="navbar-brand" to="/home"></Link>
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <Categories/>
                     </ul>
